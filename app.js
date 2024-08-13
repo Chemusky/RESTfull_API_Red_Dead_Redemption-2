@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = 9000;
 
+// importación de la ruta para desarrollar los controladores
+const charactersRouter = require("./routes/characterRoutes");
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -24,6 +27,8 @@ db.on("connected", () => {
 db.on("disconnected", () => {
   console.log(`Se perdió la conexión a la Base de datos`);
 });
+
+app.use("/characters", charactersRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
