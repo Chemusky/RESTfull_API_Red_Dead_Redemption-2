@@ -27,7 +27,9 @@ db.on("connected", () => {
 db.on("disconnected", () => {
   console.log(`Se perdió la conexión a la Base de datos`);
 });
+// Fin de la conexión a Mongo DB
 
+// Se crea la ruta para acceder a los distintos endpoints
 app.use("/characters", charactersRouter);
 
 app.listen(PORT, () => {
