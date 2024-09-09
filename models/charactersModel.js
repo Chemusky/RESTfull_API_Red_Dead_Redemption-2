@@ -13,7 +13,7 @@ const charactersSchema = new Schema({
   },
   dateOfDeath: {
     type: Number,
-    required: [true, "La Fecha de Defunción es obligatoria"],
+    String,
   },
   faction: {
     type: String,
